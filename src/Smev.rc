@@ -1,0 +1,875 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Smev.ico"
+IDR_SMEVTYPE            ICON    DISCARDABLE     "res\\SmevDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDR_TOOLBAR_CAMERA      BITMAP  DISCARDABLE     "res\\toolbar1.bmp"
+IDR_TOOLBAR_VORONOI     BITMAP  DISCARDABLE     "res\\toolbar_.bmp"
+IDB_BMTREE_TETRA_SELECTED BITMAP  DISCARDABLE     "res\\bmp00001.bmp"
+IDB_BMTREE_TETRA        BITMAP  DISCARDABLE     "res\\bmtreefi.bmp"
+IDB_BMTREE_FACE_SELECTED BITMAP  DISCARDABLE     "res\\bmp00002.bmp"
+IDB_BMTREE_FACE         BITMAP  DISCARDABLE     "res\\bmp00003.bmp"
+IDB_BMTREE_VERTEX_SELECTED BITMAP  DISCARDABLE     "res\\bmtreedo.bmp"
+IDB_BMTREE_VERTEX       BITMAP  DISCARDABLE     "res\\bmtreebi.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+    BUTTON      ID_CONTEXT_HELP
+    BUTTON      IDN
+END
+
+IDR_TOOLBAR_CAMERA TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_BUTTON_CAMERA_TLEFT
+    BUTTON      ID_BUTTON_CAMERA_TRIGHT
+    BUTTON      ID_BUTTON_CAMERA_TBACK
+    BUTTON      ID_BUTTON_CAMERA_TFRONT
+    BUTTON      ID_BUTTON_CAMERA_ROTATE_Y_CCW
+    BUTTON      ID_BUTTON_CAMERA_ROTATE_Y_CW
+    BUTTON      ID_BUTTON_CAMERA_ROTATE_X_CCW
+    BUTTON      ID_BUTTON_CAMERA_ROTATE_X_CW
+END
+
+IDR_TOOLBAR_VORONOI TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_BUTTON_VORONOI_VERTICES
+    BUTTON      ID_BUTTON_VORONOI_PREV_SAMPLE
+    BUTTON      ID_BUTTON_VORONOI_NEXT_SAMPLE
+    BUTTON      ID_BUTTON_VORONOI_CELL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        POPUP "&Import"
+        BEGIN
+            MENUITEM "&Import From PT2 File",       ID_FILE_IMPORT_PT2FILE
+            MENUITEM "&In-Memory Rabbit Data",      ID_FILE_IMPORT_NATIVE
+        END
+        POPUP "&Export"
+        BEGIN
+            MENUITEM "Export As OBJ",               ID_FILE_EXPORT_OBJ
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT, GRAYED
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        , GRAYED
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM "&Camera Toolbar",             ID_VIEW_CAMERA_TOOLBAR
+        MENUITEM "&Voronoi Toolbar",            ID_VIEW_VORONOI_TOOLBAR
+        MENUITEM SEPARATOR
+        MENUITEM "&Point Cloud",                ID_VIEW_POINTCLOUD, CHECKED
+        MENUITEM "&Wireframe",                  ID_VIEW_WIREFRAME, CHECKED
+        MENUITEM "&Flat and Solid",             ID_VIEW_FLATSOLID, CHECKED
+        MENUITEM "&Smooth Shading",             ID_VIEW_SMOOTSHADING
+        , CHECKED
+        MENUITEM "&Wire && Shading",            ID_VIEW_WIRESHADING, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "&Lights",                     ID_VIEW_LIGHT_TOGGLE
+        MENUITEM SEPARATOR
+        MENUITEM "&Show Texture",               ID_VIEW_TEXTURE
+        MENUITEM SEPARATOR
+        MENUITEM "&Grid On/Off",                ID_VIEW_GRID
+        MENUITEM "&Bouding box",                ID_VIEW_BOUNDING_BOX
+        MENUITEM "&Ground Plane",               ID_VIEW_3DPLANE
+        MENUITEM "&Coordinate System",          ID_VIEW_COORDINATE_SYSTEM
+        MENUITEM SEPARATOR
+        MENUITEM "&Super Tetrahedron",          ID_VIEW_SUPER_TETRA
+    END
+    POPUP "&Data Acquisition"
+    BEGIN
+        MENUITEM "&From Device",                ID_ACQUISITION
+        MENUITEM "&Remote Acquisition",         ID_ACQUISITION
+    END
+    POPUP "&Reconstruction"
+    BEGIN
+        MENUITEM "Delaunay Tetrahedralizer",    ID_RECON_DELAUNAY
+        MENUITEM "&Build Voronoi Diagram",      ID_RECON_VORONOI
+        MENUITEM "Medial-Axis Transform",       ID_RECON_MEDIAL_AXIS
+        MENUITEM SEPARATOR
+        MENUITEM "&Calculate Vertex Normals",   ID_RECON_VERTEX_NORMALS
+        , GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Extract Crust",               ID_RECONSTRUCTION_EXTRUCTCRUST
+
+        MENUITEM SEPARATOR
+        MENUITEM "Surface Reconstruction",      ID_RECONSTRUCTION_3DSR
+    END
+    POPUP "&Tools"
+    BEGIN
+        MENUITEM "&Randomize Point Cloud",      ID_TOOLS_RANDOMIZE
+        MENUITEM "&Normalize Point Cloud",      ID_TOOLS_NORMALIZE_POINTS
+        MENUITEM "&Point Cloud Alignment",      ID_TOOLS_ALIGNMENT
+        MENUITEM SEPARATOR
+        MENUITEM "&Invert Face Orientation",    ID_GEOM_TOOLS_FACE_ORIENT
+        MENUITEM "&Flip Vertex Normals",        ID_TOOLS_FLIP_VNORMALS
+        MENUITEM SEPARATOR
+        MENUITEM "&Options...",                 ID_TOOLS_OPTION
+        MENUITEM "&Flagged Tetrahedra",         ID_TOOLS_FLAGGED_TETRA
+    END
+    POPUP "&Analysis "
+    BEGIN
+        MENUITEM "&Error Verification",         ID_VIEW_PHONG
+        MENUITEM SEPARATOR
+        POPUP "&Logging"
+        BEGIN
+            MENUITEM "&Start Logging",              ID_ANALYSIS_LOG_START
+            MENUITEM "&End Logging",                ID_ANALYSIS_LOG_END
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Displacement Map"
+        BEGIN
+            MENUITEM "&Crust Displacement",         ID_ANALYSIS_DISPLACE_MAP_CRUST
+
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Slivers",                    ID_ANALYSIS_SLIVERS
+        MENUITEM "Geometrical Statistics",      ID_ANALYSIS_STATISTICS
+    END
+    POPUP "&Visualisation"
+    BEGIN
+        MENUITEM "&Snooping Visualizer",        ID_VISUALIZATION_VIS_SNOOPER
+        MENUITEM SEPARATOR
+        MENUITEM "&Face Orientation",           ID_VISUALISATION_FACEORIENT
+        MENUITEM SEPARATOR
+        MENUITEM "&Visual Debugger",            ID_VISUALIZATION_VISDEBUG
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help Topics",                ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "About Recovery3D ...",        ID_HELP_ABOUT_R3D
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+    VK_F1,          ID_CONTEXT_HELP,        VIRTKEY, SHIFT
+    VK_F1,          ID_HELP,                VIRTKEY 
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 154, 206
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Recovery 3D"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Recovery3D  Version 1, Release 1",IDC_STATIC,29,13,104,
+                    10,SS_NOPREFIX
+    CTEXT           "\nBSc  Software Engineering Project\n\nCavendish School of Computer Science\nUniversity of Westminster",
+                    IDC_STATIC,19,108,122,50,SS_SUNKEN
+    DEFPUSHBUTTON   "OK",IDOK,61,183,32,14,WS_GROUP
+    CTEXT           "Aaron Licata\nCopyright (c) 2001",IDC_STATIC,46,82,66,
+                    18
+    GROUPBOX        "",IDC_STATIC,7,7,140,98
+    CTEXT           "project website: http://com399.tripod.com\ne-mail aaronlicata@hotmail.com",
+                    IDC_STATIC,19,163,128,17
+    CONTROL         151,IDC_STATIC,"Static",SS_BITMAP,55,25,50,53
+END
+
+IDD_DIALOGBAR DIALOGEX 0, 0, 120, 318
+STYLE WS_CHILD | WS_BORDER
+EXSTYLE WS_EX_TRANSPARENT
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Geomery && Topology Control",IDC_STATIC,13,61,99,84,0,
+                    WS_EX_DLGMODALFRAME
+    CONTROL         "Show Delaunay structure",IDC_CHECKDELAUNAY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,19,74,8,9
+    LTEXT           "Delaunay",IDC_STATIC,27,73,32,8,WS_TABSTOP
+    CONTROL         "V-Vertices",IDC_CHECKVORONOIVERTICES,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,19,95,40,10
+    CONTROL         "CH/SC",IDC_CHECKCONVEXHULL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,19,85,41,8
+    CONTROL         "V-Cell",IDC_CHECKVOROCELL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,66,74,35,9
+    CONTROL         "V-Ball",IDC_CHECKVORONOIBALL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,66,85,38,9
+    CONTROL         "M-Ball",IDC_CHECKMedialBall,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,66,95,38,9
+    GROUPBOX        "Mesh && Texture  Control",IDC_STATIC,13,4,99,35,0,
+                    WS_EX_DLGMODALFRAME
+    CONTROL         "V Normals",IDC_CHECKVERTNORMAL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,15,40,9
+    CONTROL         "Check1",IDC_CHECK8,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,20,26,8,9
+    LTEXT           "F Normals",IDC_STATIC,28,26,33,9
+    CONTROL         "Check1",IDC_CHECK10,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,65,15,8,9
+    LTEXT           "Mesh",IDC_STATIC,74,15,25,9
+    CONTROL         "Check1",IDC_CHECK11,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,65,26,8,9
+    LTEXT           "Texture",IDC_STATIC,73,26,32,9
+    CONTROL         "CheckVoronoiDiagram",IDC_CHECKVORODIAGRAM,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,19,107,8,9
+    LTEXT           "V-Diagram",IDC_STATIC,27,107,35,9
+    CONTROL         "MAT",IDC_CHECKMEDIALAXIS,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,19,118,39,9
+    CONTROL         "CH Points",IDC_CHECKPOINTCLOUD,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,66,107,39,9
+    CONTROL         "Slivers",IDC_CHECKSLIVERS,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,66,118,35,9
+    CONTROL         "Orientation",IDC_CHECKORIENTATION,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,19,130,45,9
+    CONTROL         "Crust",IDC_CHECKCRUSTEDGES,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,66,130,38,9
+    PUSHBUTTON      "Radius Filter",IDC_BUTTON_ALPHA_SHAPE,15,151,47,11
+    PUSHBUTTON      "Volume",IDC_BUTTON2,64,151,46,11,WS_DISABLED
+    CONTROL         151,IDC_STATIC,"Static",SS_BITMAP | SS_REALSIZEIMAGE | 
+                    SS_SUNKEN | WS_BORDER,36,209,52,55
+    GROUPBOX        "",IDC_STATIC,13,144,99,60
+    PUSHBUTTON      "Location",IDC_BUTTON_LOCATION,15,164,47,11
+    PUSHBUTTON      "Hierarchy",IDC_BUTTON_HIERARCHY,64,164,46,11,
+                    WS_DISABLED
+    PUSHBUTTON      "Control",IDC_BUTTON_LAST1,15,177,47,11,WS_DISABLED
+    PUSHBUTTON      "Deviation",IDC_BUTTON_Last2,64,177,46,11,WS_DISABLED
+    PUSHBUTTON      "Actual",IDC_BUTTON_ACTUAL,13,41,33,18,0,
+                    WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "Vdbug",IDC_BUTTON5,47,41,32,18,0,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "Duality",IDC_BUTTON_DUALITY,80,41,32,18,0,
+                    WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "Resources",IDC_BUTTON_LAST3,15,190,47,11,WS_DISABLED
+    PUSHBUTTON      "Tracking",IDC_BUTTON_Last4,64,190,46,11,WS_DISABLED
+END
+
+IDD_DIALOG_RANDOMIZER DIALOG DISCARDABLE  0, 0, 153, 104
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Randomize Point Cloud"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,54,61,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,54,78,50,14
+    SCROLLBAR       IDC_SCROLLBAR_RANDOMIZER,24,32,52,11
+    EDITTEXT        IDC_EDIT_RANDOMIZER,79,31,54,13,ES_AUTOHSCROLL
+    LTEXT           "Random Point Cloud Displacement %",IDC_STATIC,23,19,117,
+                    10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,2,1
+ PRODUCTVERSION 1,0,2,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "BSc Software Engineering Final Project\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Recovery3d  MFC Application\0"
+            VALUE "FileVersion", "1, 0, 2, 1\0"
+            VALUE "InternalName", "Recoveryed\0"
+            VALUE "LegalCopyright", "Aaron Licata    Copyright (C) 2001\0"
+            VALUE "OriginalFilename", "Recovery3d.EXE\0"
+            VALUE "ProductName", "Recovery 3D\0"
+            VALUE "ProductVersion", "1, 0, 2, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 147
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+
+    IDD_DIALOGBAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 13
+        RIGHTMARGIN, 112
+        TOPMARGIN, 10
+        BOTTOMMARGIN, 314
+        HORZGUIDE, 35
+        HORZGUIDE, 70
+        HORZGUIDE, 250
+    END
+
+    IDD_DIALOG_RANDOMIZER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 146
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 97
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Recovery3D\n\nRecovery3D\n*.smv\n.smv\nRecovery3D.Document\nRecovery3D Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Smev"
+    AFX_IDS_IDLEMESSAGE     "For Help, press F1"
+    AFX_IDS_HELPMODEMESSAGE "Select an object on which to get Help"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+    ID_HELP_INDEX           "Opens Help\nHelp Topics"
+    ID_HELP_FINDER          "List Help topics\nHelp Topics"
+    ID_HELP_USING           "Display instructions about how to use help\nHelp"
+    ID_CONTEXT_HELP         "Display help for clicked on buttons, menus and windows\nHelp"
+    ID_HELP                 "Display help for current task or command\nHelp"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_RECON_DELAUNAY       "Build Delaunay tetrahedralization\nDelaunay tetrahedralization"
+    ID_RECON_CONVEX_HULL    "Find normals for each vertex\nFind Vertex Normals"
+    ID_RECON_VORONOI        "Build Voronoi Diagram\nVoronoi Diagram"
+    ID_VIEW_WIREFRAME       "View in wireframe mode"
+    ID_VIEW_SOLID           "View in solid mode"
+    ID_VIEW_GUORAUD         "View geometrical statistics\nView statistics"
+    ID_VIEW_PHONG           "View in Phong shading"
+    ID_VIEW_TEXTURE         "View models in textured mode"
+    ID_VIEW_SMOOTSHADING    "View with smooth shading\nSmooth shading"
+    ID_VIEW_FLAT            "View models in flat mode"
+    ID_VIEW_VEREXTONLY      "Show only the vertices of the model"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_IMPORT_PT2      "Import file in pt2 format\nImport PT2"
+    ID_FILE_EXPORT_OBJ      "Export mesh in Wavefront OBJ file format\nExport As OBJ File"
+    ID_VIEW_CAMERA_TOOLBAR  "Show or hide camera toolbar\nToggle Camera Toolbar"
+    ID_VIEW_VORONOI_TOOLBAR "Show or hide Voronoi toolbar\nToggle Voronoi Toolbar"
+    ID_TOOLS_OPTION         "Change sytem's options\nSystem options"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_POINTCLOUD      "View only point cloud\nView Point Cloud"
+    ID_TOOLS_RANDOMIZE      "Apply a random displacement to all data points\nRandomize point cloud"
+    ID_VIEW_GRID            "Toggle Grid\nToggle Grid"
+    ID_VIEW_FLATSOLID       "View as flat and solid faces\nView in flat and solid mode"
+    ID_VIEW_WIRESHADING     "Use shaded faces with thick wireframe"
+    ID_VISUALIZATION_FACE_ORIENTATION "Rotate camera left\nRotate camera left"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_HELP_ABOUT_R3D       "About Reconvery3d"
+    ID_VISUALIZATION_VISDEBUG 
+                            "Visual data structure debugger\nVisual Debugger"
+    ID_FILE_IMPORT_PT2FILE  "&Import a point cloud from file in PT2 format\nImport PT2 file"
+    ID_ANALYSIS_DISPLACE_MAP_CRUST 
+                            "Show crust displacement map\nCrust displacement"
+    ID_RECONSTRUCTION_EXTRUCTCRUST 
+                            "Extract the crust from a simplicial complex and its medial axis\nExtract crust"
+    ID_VIEW_MAX_BOX         "Toggle bounding box\nBouding box"
+    ID_TOOLS_NORMALIZE_POINTS 
+                            "Reposition point cloud at center of coordinate system\nNormalize Points"
+    ID_RECONSTRUCTION_3DSR  "Perform whole surface reconstruction\nSurface reconstruction"
+    ID_FILE_IMPORT_NATIVE   "Import sample data in native format\nImport sample data"
+    ID_VIEW_3DPLANE         "Toggle plane representing the ground\nToggle ground plane"
+    ID_VIEW_COORDINATE_SYSTEM 
+                            "Toggle coorindate system at origin\nToggle soordinate system"
+    ID_TOOLS_FLAGGED_TETRA  "Count how may tetrahedron have been flagged\nFlagged tetrahedrra"
+    ID_RECON_VERTEX_NORMALS "Calculate vertex normals\nVertex normals"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_SUPER_TETRA     "Toggle view of the super tetrahedron\nSuper tetrahedron"
+    ID_VIEW_LIGHT_TOGGLE    "Toggle light/nToggle lights"
+    ID_TOOLS_FLIP_VNORMALS  "Flip vertex normals\nFlip vertex normals"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP2             BITMAP  DISCARDABLE     "res\\recon3d.bmp"
+IDB_BITMAP_RECOV3D      BITMAP  DISCARDABLE     "res\\recov256.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_CONTEXTMENU_CONTROL MENU DISCARDABLE 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "&Camera Spinning",            ID_CONTEXT_CTRL_ROTATE_XY
+        , CHECKED
+        MENUITEM "&Camera Panning",             ID_CONTEXT_CTRL_TRANSLATE_XY
+        MENUITEM "&Depth Control",              ID_CONTEXT_CTRL_ROTRANS_Z
+        MENUITEM "&Pick Vertex",                ID_CONTEXT_CTRL_PICK_VERTEX
+        MENUITEM "&Pick Face",                  ID_CONTEXT_CTRL_PICK_TRIANGLE
+
+        MENUITEM "&Pick Tetrahedron",           ID_CONTEXT_CTRL_PICK_TETRAHEDRON
+
+    END
+    MENUITEM "Top",                         65535
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_ALPHA_SHAPE_PARAM DIALOGEX 0, 0, 240, 52
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Radius Filtering"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,128,31,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,183,31,50,14
+    CONTROL         "Slider1",IDC_SLIDER_ALPHA_SHAPE,"msctls_trackbar32",
+                    TBS_AUTOTICKS | TBS_TOP | TBS_NOTICKS | WS_BORDER | 
+                    WS_TABSTOP,10,8,168,13,WS_EX_DLGMODALFRAME | 
+                    WS_EX_CLIENTEDGE
+    EDITTEXT        IDC_EDIT_ALPHA_VALUE,183,8,41,12,ES_READONLY
+    GROUPBOX        "Radius ",IDC_STATIC,7,0,226,24
+    CONTROL         "Invert Radius Shape Sculpting",IDC_CHECK_INVERT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,10,26,106,8
+END
+
+IDD_DIALOG_OPTIONS DIALOG DISCARDABLE  0, 0, 209, 132
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,31,103,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,106,103,50,14
+    CONTROL         "white backgroud",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,20,20,61,10
+    CONTROL         "gray background",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,20,32,68,10
+    CONTROL         "blue background",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,20,45,69,12
+    CONTROL         "black backround",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,20,59,66,11
+    GROUPBOX        "Background Color",IDC_STATIC,14,7,79,74
+    EDITTEXT        IDC_EDIT_NORMAL_FACTOR,144,19,47,13,ES_AUTOHSCROLL
+    LTEXT           "normal factor",IDC_STATIC,100,21,39,8
+    EDITTEXT        IDC_EDIT_MAXRADIUS_FACTOR,144,38,47,13,ES_AUTOHSCROLL
+    LTEXT           "max radius",IDC_STATIC,100,40,39,8
+    EDITTEXT        IDC_EDIT_SUPER_FACTOR,144,58,47,13,ES_AUTOHSCROLL
+    LTEXT           "super factor",IDC_STATIC,100,60,39,8
+    GROUPBOX        "Geometry Properties",IDC_STATIC,94,7,108,74
+END
+
+IDD_DIALOG_LOCATION DIALOG DISCARDABLE  0, 0, 85, 112
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Camera Location"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,21,94,42,13
+    CONTROL         "front  (default)",IDC_RADIO_FRONT,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE | WS_GROUP | WS_TABSTOP,
+                    7,7,71,11
+    CONTROL         "top",IDC_RADIO_TOP,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_TABSTOP,7,19,71,11
+    CONTROL         "left side",IDC_RADIO_SIDE,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_TABSTOP,7,31,71,11
+    CONTROL         "near object",IDC_RADIO_NEAR,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_TABSTOP,7,43,71,11
+    CONTROL         "far from object",IDC_RADIO_FAR,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE | WS_TABSTOP,7,55,71,11
+    CONTROL         "inside objet",IDC_RADIO_INSIDE,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE | WS_TABSTOP,7,67,71,11
+    CONTROL         "follow pole vertex",IDC_RADIO_FOLLOW_POLE,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE | WS_TABSTOP,7,79,71,11
+END
+
+IDD_DIALOG_INTRODUCTION DIALOG DISCARDABLE  0, 0, 187, 133
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Warning"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,72,112,50,14
+    LTEXT           "Recovery3D is still in development",IDC_STATIC,40,11,
+                    122,9
+    LTEXT           "However, to get an idea of how it works choose:",
+                    IDC_STATIC,28,33,144,11
+    CONTROL         "File/Import/In-Memory Rabbit\n\nReconstruction/Surface Reconstruction",
+                    IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | WS_GROUP,47,59,
+                    132,27
+END
+
+IDD_DIALOG_RECON_PROGRESS DIALOG DISCARDABLE  0, 0, 187, 54
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Reconstruction Process"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,65,33,50,14
+    CONTROL         "Progress1",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,
+                    7,7,173,17
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DIALOG_ALPHA_SHAPE_PARAM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 45
+    END
+
+    IDD_DIALOG_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 202
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 125
+    END
+
+    IDD_DIALOG_LOCATION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 78
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 105
+    END
+
+    IDD_DIALOG_INTRODUCTION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 126
+    END
+
+    IDD_DIALOG_RECON_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 47
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\Smev.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\Smev.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
