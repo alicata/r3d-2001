@@ -19,6 +19,8 @@ The core of the surface reconstructor is a combination of three algorihtms: Crus
 
 The Crust algorithm is built from 3D Medial Axis transform and pole finding algorithm. 
 
+# Building
+The tool is targeted at the Windows platform and at the time it was implemented (circa 2001) it built against MSVC++2005. 
 
 
  
